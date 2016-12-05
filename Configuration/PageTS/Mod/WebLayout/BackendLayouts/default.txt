@@ -1,0 +1,7 @@
+page {
+  fluidtemplate {
+    templateRootPath = EXT:adico_decouverte_v7/Private/Templates/Page/
+    layoutRootPath = EXT:adico_decouverte_v7/Private/Layouts/Page/
+    partialRootPath = EXT:adico_decouverte_v7/Private/Partials/Page/
+  }
+}
