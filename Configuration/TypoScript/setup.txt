@@ -1,7 +1,4 @@
-
 config {
-    extTarget = _blank
-
     // Language Settings
     sys_language_uid = 0
     sys_language_overlay = 1
@@ -10,11 +7,19 @@ config {
     locale_all = fr_FR.UTF-8
     htmlTag_setParams = lang="fr" dir="ltr" class="no-js"
 
-    // Compression and Concatenation of CSS and JS Files
-    compressJs = {$config.compressJs}
-    compressCss = {$config.compressCss}
-    concatenateJs = {$config.concatenateJs}
-    concatenateCss = {$config.concatenateCss}
+    //Search Settings
+    index_enable = 1
+    index_externals = 1
+	
+    //Cible lien externe
+    extTarget = _blank
+	
+    //Realurl
+    tx_realurl_enable = {$config.realurl}
+
+    //Domaine
+    baseURL = {$config.baseURL}
+
 }
 
 
@@ -41,22 +46,56 @@ page {
                  }
             
         
-        templateRootPaths {
-            0 = EXT:adico_decouverte_v7/Resources/Private/Templates/Page/
-            1 = {$page.fluidtemplate.templateRootPath}
-        }
-        partialRootPaths {
-            0 = EXT:adico_decouverte_v7/Resources/Private/Partials/Page/
-            1 = {$page.fluidtemplate.partialRootPath}
-        }
-        layoutRootPaths {
-            0 = EXT:adico_decouverte_v7/Resources/Private/Layouts/Page/
-            1 = {$page.fluidtemplate.layoutRootPath}
-        }
+		templateRootPath{
+			0 = EXT:bootstrap_package/Resources/Private/Templates/Page/
+			1 = EXT:adico_decouverte_v7/Resources/Private/Templates/Page/
+			2 = {$page.fluidtemplate.templateRootPath}
+		}
+			layoutRootPath{
+			0 = EXT:bootstrap_package/Resources/Private/Layouts/Page/
+			1 = EXT:adico_decouverte_v7/Resources/Private/Layouts/Page/
+			2 = {$page.fluidtemplate.layoutRootPath}		
+		}
+		
+			partialRootPath{
+			0 = EXT:bootstrap_package/Resources/Private/Partials/Page/
+			1 = EXT:adico_decouverte_v7/Resources/Private/Partials/Page/
+			2 = {$page.fluidtemplate.partialRootPath}
+		}
+		
+		variables {
+			#copyright
+			themeCopyright= TEXT
+			themeCopyright.value = {$page.theme.copyright.enable}
+			themeCopyrightText = COA
+			themeCopyrightText{
+				10 = TEXT
+				10{
+					data = date:U
+					strftime = %Y
+					wrap = <span>&copy; {$page.theme.copyright.text} &nbsp; |</span>
+				}
+			}		 
+		}		
+		
+		##########################
+		### DATA PREPROCESSING ###
+		##########################
+		dataProcessing {
+			50 = BK2K\BootstrapPackage\DataProcessing\MenuProcessor
+			50 {
+				special = directory
+				special.value = {$page.footer.navdir}
+				includeNotInMenu = {$page.footer.notinmenu}
+				excludeUidList = {$page.footer.excludelist}
+				as = footernavigation
+			}   
+		}		
     }
 
     includeCSS {
-        theme = EXT:adico_decouverte_v7/Resources/Private/Less/Theme/theme.less
+        decouverte = EXT:adico_decouverte_v7/Resources/Public/Less/Theme/decouverte.less
+	decouverte.title = CSS
     }
 
     jsFooterInline {
@@ -81,17 +120,16 @@ page {
     }
 }
 
-#Accordion
-tt_content.bootstrap_package_accordion = COA
-tt_content.bootstrap_package_accordion {
-  10 =< lib.stdheader
-  20 = FLUIDTEMPLATE
-  20 {
-    file = {$plugin.bootstrap_package_contentelements.view.templateRootPath}Bootstrap/Accordion.html
-    partialRootPath = {$plugin.bootstrap_package_contentelements.view.partialRootPath}
-    layoutRootPath = {$plugin.bootstrap_package_contentelements.view.layoutRootPath}
+#bandeau
+lib.bandeau = COA
+lib.bandeau {
+  10 = CONTENT
+  10 {
+	table = tt_content
+	select.where = colPos = 0
+	select.orderBy = sorting
+	select.pidInList = {$page.bandeau}
   }
 }
-
-
-
+#### Google Site Map
+tx_ddgooglesitemap.forceStartPid = {$config.googlesitemap.rootUid}

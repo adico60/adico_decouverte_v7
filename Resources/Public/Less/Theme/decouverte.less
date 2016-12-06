@@ -1,0 +1,45 @@
+/*
+ * Add Frame Style
+ * --------------------------------------------------
+ */
+.sans-marge{
+    margin-top :0;
+    margin-bottom:0;
+ } 
+
+/*
+ * Background Style
+ * --------------------------------------------------
+ */
+.bg-effet {
+    background: @bodyBackground;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+/*
+ * Bandeau Style
+ * --------------------------------------------------
+ */
+
+.bandeau{
+    padding: 0;
+	position: relative;
+	min-height: @bandeauHeight;
+   .carousel-inner > .item{
+       height: @bandeauHeight;
+    }
+	.logo-sup {
+		left: @logoPosX;
+		position: absolute;
+		text-align: center;
+		top: @logoPosTop;
+		bottom: @logoPosBottom;
+		width: @logoZoneWidth;
+		z-index: 1000;
+	}	
+}

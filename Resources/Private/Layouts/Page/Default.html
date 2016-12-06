@@ -1,25 +1,33 @@
-<div class="body-bg">
-	<div class="container">
-		<img id ="bgImg" src="<f:cObject typoscriptObjectPath="lib.pageBgImg" />"/>
-	</div>
-</div>
+<div class="bg-effet"></div>
 <div class="body-bg{f:if(condition:themeNavigationtype, then:' body-bg-{themeNavigationtype}')}">
 	<f:link.page class="sr-only sr-only-focusable" section="content">
 		{f:translate(key: 'skiptomaincontent', extensionName: 'bootstrap_package')}
 	</f:link.page>
-	<f:if condition="{showHeader}">
-		<f:render partial="Navigation/Main" arguments="{_all}"/>
-		<f:cObject typoscriptObjectPath="lib.navigation.breadcrumb"/>
-	</f:if>
-	<!--TYPO3SEARCH_begin-->
-	<div id="content" class="main-section">
+	<header class="wrapper">
+		<div class="container bandeau">
+			<f:cObject typoscriptObjectPath="lib.bandeau"/>	
+			 <span class="logo-sup">
+				<f:if condition="{settings.logo.file}">
+							<f:then>
+								<f:link.page pageUid="{rootPage}" class="link-img-logo" title="{settings.logo.linktitle}">
+									<img class="img-logo" src="{f:uri.image(src: settings.logo.file)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}" />
+								</f:link.page>
+							</f:then>
+							<f:else>
+								<f:link.page pageUid="{rootPage}" class="link-logo" title="{settings.logo.linktitle}">{siteTitle}</f:link.page>
+							</f:else>
+				</f:if>	
+			</span>					
+		</div> 
+	</header>	
+	<f:render partial="Navigation/Main" arguments="{_all}"/>
+	<f:render partial="Navigation/Breadcrumb" arguments="{_all}"/>
+
+	<div id="content" class="main-section container">
+	<!--TYPO3SEARCH_begin-->	
 		<f:render section="Main"/>
-		<f:if condition="{onePage}">
-			<f:cObject typoscriptObjectPath="lib.content.onepage"/>
-		</f:if>
+	<!--TYPO3SEARCH_end-->		
 	</div>
-	<!--TYPO3SEARCH_end-->
-	<f:if condition="{showFooter}">
-		<f:render partial="Structure/Footer" arguments="{_all}"/>
-	</f:if>
+
+	<f:render partial="Structure/Footer" arguments="{_all}"/>
 </div>
