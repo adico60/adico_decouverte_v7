@@ -1,5 +1,4 @@
-<header
-    class="navbar navbar-{settings.navigation.style}{f:if(condition:settings.logo.file,then:' navbar-has-image')}{f:if(condition:settings.navigation.type, else:' navbar-top', then:' navbar-{settings.navigation.type} navbar-fixed-{settings.navigation.type}')}">
+<header class="navbar">
     <div class="container">
         <div class="navbar-header navbar-header-main">
             <f:if condition="{mainnavigation}">
@@ -14,7 +13,7 @@
         </div>
         <f:if condition="{mainnavigation}">
             <nav class="navbar-collapse collapse" role="navigation">
-                <ul class="nav navbar-nav navbar-main">
+                <ul class="nav nav-justified">
                     <f:for each="{mainnavigation}" as="mainnavigationItem">
                         <li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
                             <f:link.page pageUid="{mainnavigationItem.data.uid}" title="{mainnavigationItem.title}">
