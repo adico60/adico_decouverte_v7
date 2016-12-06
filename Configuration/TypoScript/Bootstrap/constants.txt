@@ -1,8 +1,6 @@
 plugin.bootstrap_package {
 	settings {
 		less {
-			gray-base       = #1690d0
-			body-bg         = #fff
 			text-color      = #333
 			font-size-base  = 14px
 			font-size-large = ceil((@font-size-base * 1.25))
@@ -31,21 +29,8 @@ plugin.bootstrap_package {
 			  #cat=Decouverte: CSS/color/015; type=string; label= Couleur de l'arrière plan
 			  bodyBackground = rgb(242, 242, 242)
 
-			  #cat=Decouverte: CSS/color/016; type=string; label= Couleur principal du menu
-			  menuCouleur = #0f608a
-
-			  #cat=Decouverte: CSS/color/017; type=string; label= Couleur 2 du menu (pour le dégradé)
-			  menuCouleur2 = #1690d0
-
-			  #cat=Decouverte: CSS/color/018; type=string; label= Couleur de la bordure du menu
-			  menuBordure = #0c5073
-
-			  #cat=Decouverte: CSS/color/019; type=string; label= Couleur de survol
-			  menuHover = #359fd6
-
-			  #cat=Decouverte: CSS/color/020; type=string; label= Couleur du texte des rubriques
-			  menuTexte = #ffffff
-
+			  #cat=Decouverte: CSS/color/016; type=color; label= Couleur principal du site
+			  gray-base = #1690d0
 		}
 	}
 }

@@ -49,6 +49,11 @@
 * Mainmenu Style
 * --------------------------------------------------
 */
+@decouverte-base : @gray-base; // # 0099FF
+@decouverte-light: mix(@decouverte-base, white, 86.7%); // # 22BBFF
+@decouverte-dark: mix(@decouverte-base, black, 55.3%); // # 005588
+@decouverte-bg: mix(@decouverte-base, black, 66.5%); // # 006699
+
 .navbar{
 	.container{
 		padding : 0;	
@@ -61,42 +66,78 @@
 		background : #ffffff;
      	.icon-bar {
 			background-color: #8c8c8c;		
+		}
 	}
 }
-}
+
 .nav-justified {
-    background-color: @menuCouleur;
-    border: 1px solid @menuCouleur;
-    border-radius: 6px;
+	background-color: @decouverte-bg;
+	border-radius: 6px;
+	border: 1px solid @decouverte-bg;
+
+	> li > a {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: contrast(@decouverte-bg, black, white);
+		font-weight: bold;
+		text-align: center;
+		border-bottom: 1px solid @decouverte-dark;
+		background-color: @decouverte-bg; /* Old browsers */
+		background-repeat: repeat-x; /* Repeat the gradient */
+		background-image: -moz-linear-gradient(top, @decouverte-base 0%, @decouverte-bg 100%); /* FF3.6+ */
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@decouverte-base), color-stop(100%,@decouverte-bg)); /* Chrome,Safari4+ */
+		background-image: -webkit-linear-gradient(top, @decouverte-base 0%,@decouverte-bg 100%); /* Chrome 10+,Safari 5.1+ */
+		background-image: -ms-linear-gradient(top, @decouverte-base 0%,@decouverte-bg 100%); /* IE10+ */
+		background-image: -o-linear-gradient(top, @decouverte-base 0%,@decouverte-bg 100%); /* Opera 11.10+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@decouverte-base', endColorstr='@decouverte-bg',GradientType=0 ); /* IE6-9 */
+		background-image: linear-gradient(top, @decouverte-base 0%,@decouverte-bg 100%); /* W3C */
+	}
+
+	> .active > a,
+	> .active > a:hover,
+	> .active > a:focus {
+		color: black;
+		background-color: @decouverte-bg;
+		background-image: none;
+		box-shadow: inset 0 3px 7px rgba(0,0,0,.25);
+	}
+
+	> li > a:hover { 
+		color: black;
+		background-color: @decouverte-light; 
+		background-image: none;
+		box-shadow: inset 0 3px 7px rgba(0,0,0,.25);
+	}
+
+	> li:first-child > a {
+		border-radius: 5px 5px 0 0;
+	}
+
+	> li:last-child > a {
+		border-radius: 0 0 5px 5px;
+	}
 }
-.nav-justified > li > a {
-    background-color: @menuCouleur;
-    background-image: -moz-linear-gradient(center top , @menuCouleur2 0%, @menuCouleur 100%);
-    background-repeat: repeat-x;
-    border-bottom: 1px solid @menuBordure;
-    color: @menuTexte;
-    font-weight: bold;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    text-align: center;
-}
-.nav-justified > .active > a, .nav-justified > .active > a:hover, .nav-justified > .active > a:focus {
-    background-color: @menuCouleur;
-    background-image: none;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25) inset;
-    color: black;
-}
-.nav-justified > li > a:hover {
-    background-color: @menuHover;
-    background-image: none;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25) inset;
-    color: black;
-}
-.nav-justified > li:first-child > a {
-    border-radius: 5px 5px 0 0;
-}
-.nav-justified > li:last-child > a {
-    border-radius: 0 0 5px 5px;
+
+
+@media (min-width: 768px) {
+	.nav-justified {
+		max-height: 52px;
+
+		> li > a {
+			border-left: 1px solid @decouverte-base;
+			border-right: 1px solid @decouverte-dark;
+		}
+
+		> li:first-child > a {
+			border-left: 0;
+			border-radius: 5px 0 0 5px;
+		}
+
+		> li:last-child > a {
+			border-radius: 0 5px 5px 0;
+			border-right: 0;
+		}
+	}
 }
 
 /*
@@ -113,4 +154,17 @@
 	.copyright {
 		text-align: center;
 	}
+}
+
+/*
+* Couleurs des titres
+* --------------------------------------------------
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: lighten(spin(@gray-base, 180), 12%);
 }
