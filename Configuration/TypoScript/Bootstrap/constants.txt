@@ -26,10 +26,10 @@ plugin.bootstrap_package {
 			 #cat=Decouverte: CSS/dims/011; type=string; label=Hauteur du bandeau : Fixe la hauteur pour .carousel-inner > .item
                          bandeauHeight = 300px
 
-			  #cat=Decouverte: CSS/color/015; type=string; label= Couleur de l'arrière plan
+			  #cat=Decouverte: CSS/color/015; type=string; label= Couleur Arrière plan du site 
 			  bodyBackground = rgb(242, 242, 242)
 
-			  #cat=Decouverte: CSS/color/016; type=color; label= Couleur principal du site
+			  #cat=Decouverte: CSS/color/016; type=color; label= Couleur principal du site: Bleu(#1690d0) / Rouge Vif (#FF1900) / Vert Mousse (#cfcd4f) / Orange (#f59f0e) / Marron (#b87142) / Vert (#609b3e) / Rose (#ff719f] / Jaune (#fff000) / Moutarde (#ffe20a)
 			  gray-base = #1690d0
 		}
 	}
