@@ -17,7 +17,12 @@
 								<f:link.page pageUid="{rootPage}" class="link-logo" title="{settings.logo.linktitle}">{siteTitle}</f:link.page>
 							</f:else>
 				</f:if>	
-			</span>					
+			</span>	
+			 <f:if condition="{showCollectivite}">
+			 <section class="titre-sup">
+					<h1><f:link.page pageUid="{rootPage}" class="link-logo" title="{settings.titreBandeau.texte}">{settings.titreBandeau.texte}</f:link.page></h1>
+			</section>
+			</f:if>				
 		</div> 
 	</header>	
 	<f:render partial="Navigation/Main" arguments="{_all}"/>

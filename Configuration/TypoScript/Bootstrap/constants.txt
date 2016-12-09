@@ -11,20 +11,32 @@ plugin.bootstrap_package {
 			font-size-h4    = ceil((@font-size-base * 1.25))
 			font-size-h5    = @font-size-base
 
-			#cat=Decouverte: CSS/dims/015; type=string; label= Largeur Zone Logo (mode superposé) : 100% pour centrer le logo sinon mettre la largeur du logo (ex: 300px)
+			#cat=Decouverte: CSS/dims/015; type=string; label= Largeur Zone Logo : 100% pour centrer le logo sinon mettre la largeur du logo (ex: 300px)
 			logoZoneWidth = 100%
 			  
-			#cat=Decouverte: CSS/dims/016; type=string; label= Position Gauche Logo (mode superposé): position par rapport au bord gauche de la zone bandeau (mettre 0 pour le mode superposé)
-			 logoPosX = 0
+			#cat=Decouverte: CSS/dims/016; type=string; label= Position Gauche Logo: position par rapport au bord gauche de la zone bandeau
+			 logoPosX = 20px
 			  
-			#cat=Decouverte: CSS/dims/017; type=string; label= Position Top Logo (mode superposé): position par rapport au bord haut du bandeau (mettre none si position par rapport au bas est préférée)
+			#cat=Decouverte: CSS/dims/017; type=string; label= Position Top Logo : position par rapport au bord haut du bandeau (mettre none si position par rapport au bas est préférée)
 			 logoPosTop = 90px
 			  
-			 #cat=Decouverte: CSS/dims/018; type=string; label= Position Bottom Logo (mode superposé): position par rapport au bord bas du bandeau (mettre none si position par rapport au haut est préférée)
+			 #cat=Decouverte: CSS/dims/018; type=string; label= Position Bottom Logo: position par rapport au bord bas du bandeau (mettre none si position par rapport au haut est préférée)
 			 logoPosBottom = none
+			 
+			# cat=Decouverte: CSS/dims/019; type=string; label=Taille police de caractère: taille de la police pour le titre sur le bandeau
+			titreFontSize = 3em;	
+
+			#cat=Decouverte: CSS/dims/020; type=string; label= Position Gauche Titre: position par rapport au bord gauche de la zone bandeau
+			 titrePosX = 150px
+			  
+			#cat=Decouverte: CSS/dims/021; type=string; label= Position Top Titre : position par rapport au bord haut du bandeau (mettre none si position par rapport au bas est préférée)
+			 titrePosTop = 90px
+			  
+			 #cat=Decouverte: CSS/dims/022; type=string; label= Position Bottom Titre: position par rapport au bord bas du bandeau (mettre none si position par rapport au haut est préférée)
+			 titrePosBottom = none			
 
 			 #cat=Decouverte: CSS/dims/011; type=string; label=Hauteur du bandeau : Fixe la hauteur pour .carousel-inner > .item
-                         bandeauHeight = 300px
+             bandeauHeight = 300px
 
 			  #cat=Decouverte: CSS/color/015; type=string; label= Couleur Arrière plan du site 
 			  bodyBackground = rgb(242, 242, 242)

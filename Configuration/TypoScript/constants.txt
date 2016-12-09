@@ -20,33 +20,47 @@ page {
 
 	# Copyright du site
 	theme {
-	 # cat=Decouverte: basic/160/011; type=string; label=Copyright Text: Texte affichÈ pour la zone Copyright
-	copyright.text = <a href="http://www.adico.fr">Adico</a>
+		# cat=Decouverte: basic/160/011; type=string; label=Copyright Text: Texte affich√© pour la zone Copyright
+		copyright.text = <a href="http://www.adico.fr">Adico</a>
+		logoBandeau{
+					# cat=Decouverte: basic/enable/011; type=boolean; label=Afficher le logo: Activer l'affichage du logo sur le bandeau
+					enable = 1
+		}
+		texteBandeau{
+					# cat=Decouverte: basic/enable/012; type=boolean; label=Afficher le texte : Activer l'affichage du texte sur le bandeau
+					enable = 1
+		}			
 	}
 
 	# Uid de la page contenant le bandeau
 	#cat=Decouverte: basic/150/012; type=int; label=Bandeau: Uid de la page Bandeau
 	bandeau = 1
 	
-	# ParamËtre pour le logo
+	# Param√®tre pour le logo
   	logo {
-	    # cat=Decouverte: basic/110/100; type=string; label=Logo: Laisser vide pour utiliser le titre du site ‡ la place d'une image
+	    # cat=Decouverte: basic/110/100; type=string; label=Logo: Laisser vide pour utiliser le titre du site √† la place d'une image
 	    file = EXT:adico_decouverte_v7/Resources/Public/Images/logo.png
-	    # cat=Decouverte: basic/110/120; type=int+; label=Hauteur: L'image ne sera pas redimensionnÈe!
+	    # cat=Decouverte: basic/110/120; type=int+; label=Hauteur: L'image ne sera pas redimensionn√©e!
 	    height = 90
-	    # cat=Decouverte: basic/110/130; type=int+; label=Largeur: L'image ne sera pas redimensionnÈe!
+	    # cat=Decouverte: basic/110/130; type=int+; label=Largeur: L'image ne sera pas redimensionn√©e!
 	    width = 220
-	    # cat=Decouverte: basic/110/140; type=string; label=Alternative text: Texte de l'attribut alt de l'image (par dÈfaut: "<website title> logo")
+	    # cat=Decouverte: basic/110/140; type=string; label=Alternative text: Texte de l'attribut alt de l'image (par d√©faut: "<website title> logo")
 	    alt = Decouverte
 	} 
 	
-	#ParamËtre des liens en pied de page
+	# Param√®tre pour le texte du bandeau
+  	titreBandeau {
+	    # cat=Decouverte: basic/110/150; type=string; label=Texte: Titre / Nom de la collectivit√© affich√© sur le bandeau
+	    texte = Decouverte
+	} 	
+	
+	#Param√®tre des liens en pied de page
 	footer {
-		# cat=Decouverte: basic/166/010; type=string; label=Dossiers Uid: Uid des dossiers contenant des sous-pages ‡ afficher en pied de page (sÈparÈ par des virgules)
+		# cat=Decouverte: basic/166/010; type=string; label=Dossiers Uid: Uid des dossiers contenant des sous-pages √† afficher en pied de page (s√©par√© par des virgules)
 		navdir = 
 		# cat=Decouverte: basic/166/011; type=boolean; label=Hors Menu: Inclure ou non les pages hors menu
 		notinmenu = 1
-		# cat=Decouverte: basic/166/012; type=string; label=Exclusion: Uid des pages ‡ exclure du pied de page (sÈparÈ par des virgules)
+		# cat=Decouverte: basic/166/012; type=string; label=Exclusion: Uid des pages √† exclure du pied de page (s√©par√© par des virgules)
 		excludelist = 133,134 
 	}	
 }
@@ -61,12 +75,10 @@ config {
 	googlesitemap.rootUid = 1
 	# cat=Decouverte: basic/enable/010; type=boolean; label=RealUrl: Activer RealUrl
 	realurl = 0	
-    	# cat=Decouverte: basic/150/180; type=string; label=Header Comment
-    	headerComment =	
 }
-
-#### BOOTSTRAP LESS CONSTANTS ####
-##################################
+##########################################
+#### BOOTSTRAP LESS CONSTANTS         ####
+##########################################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:adico_decouverte_v7/Configuration/TypoScript/Bootstrap/constants.txt">
 
 ##########################################
@@ -79,3 +91,4 @@ plugin.bootstrap_package_contentelements {
 	   partialRootPath  = EXT:adico_decouverte_v7/Resources/Private/Partials/ContentElements/
 	}
 }
+
