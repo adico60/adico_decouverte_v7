@@ -1,9 +1,8 @@
-# t3_Menu
+# Adico Découverte v7
 
-Ajout de nouvelles dispositions pour l'élément de contenu "menus spéciaux"
+Gabarit de site pour Typo3 7.6
 
-* Plan de site avec accordéon bootstrap
-* Différents blocs de menus avec des images
+Basé sur le gabarit "Découverte" de Typo3 6.2
 
 ## Minimal Dependencies
 * TYPO3 CMS 7.6 or greater
@@ -11,11 +10,11 @@ Ajout de nouvelles dispositions pour l'élément de contenu "menus spéciaux"
 
 ## Quick Install Guide
 * Inclure l'extension dans le gabarit du site
-* Insérer ensuite l'élément de contenu "menus spéciaux" sur une page
-* Choisir le type de menu dans la liste déroulante
+* Choisir une couleur de base
+* Modifier les paramètres à partir du module Gabarit
 
 ## Usage
-Se reporter au fichier typoscript [constants.txt](https://github.com/CDG47-Dev/t3_Menu/blob/master/Configuration/TypoScript/constants.txt) pour voir les variables utilisées et éventuellement définir de nouvelles valeurs
-
+Se reporter au fichier typoscript [constants.txt](https://github.com/adico60/adico_decouverte_v7/blob/master/Configuration/TypoScript/constants.txt) pour voir les variables utilisées et éventuellement définir de nouvelles valeurs
+Le fichier [constants.txt](https://github.com/adico60/adico_decouverte_v7/blob/master/Configuration/TypoScript/Bootstrap/constants.txt) dans le dossier Bootstrap permet de définir des valeurs de base pour la feuille de style
 ## Examples
-[voir des exemples](https://github.com/CDG47-Dev/t3_Menu/tree/master/Examples)
+[voir des exemples](https://github.com/adico60/adico_decouverte_v7/tree/master/Examples)
