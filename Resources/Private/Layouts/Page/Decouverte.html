@@ -6,6 +6,7 @@
 	<header class="wrapper">
 		<div class="container bandeau">
 			<f:cObject typoscriptObjectPath="lib.bandeau"/>	
+			<f:if condition="{showLogo}">
 			 <span class="logo-sup">
 				<f:if condition="{settings.logo.file}">
 							<f:then>
@@ -18,6 +19,7 @@
 							</f:else>
 				</f:if>	
 			</span>	
+			</f:if>	
 			 <f:if condition="{showCollectivite}">
 			 <section class="titre-sup">
 					<h1><f:link.page pageUid="{rootPage}" class="link-logo" title="{settings.titreBandeau.texte}">{settings.titreBandeau.texte}</f:link.page></h1>
