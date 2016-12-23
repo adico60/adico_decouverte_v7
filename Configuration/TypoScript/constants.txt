@@ -62,7 +62,16 @@ page {
 		notinmenu = 1
 		# cat=Decouverte: basic/166/012; type=string; label=Exclusion: Uid des pages à exclure du pied de page (séparé par des virgules)
 		excludelist = 133,134 
-	}	
+	}
+	#Paramètre des largeurs de colonnes de la structure
+	colonnes{
+		# cat=Decouverte: basic/100/015; type=int; label=Colonne Principal: largeur de la colonne principal (Main)
+ 		mainwidth = 9
+		# cat=Decouverte: basic/100/016; type=int; label=Colonne Gauche: largeur de la colonne de gauche
+		leftwidth = 3
+		# cat=Decouverte: basic/100/017; type=int; label=Colonne Droite: largeur de la colonne de droite
+		rightwidth = 3
+	}
 }
 
 ##############

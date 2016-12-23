@@ -16,7 +16,11 @@
 			<trans-unit id="backend_layout.decouverteclean">
 				<source>Page large Decouverte</source>
 			</trans-unit>
-
+			
+			<trans-unit id="backend_layout.decouverte3cols">
+				<source>Decouverte 3 Colonnes</source>
+			</trans-unit>
+			
 		</body>
 	</file>
 </xliff>
