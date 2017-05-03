@@ -1,15 +1,15 @@
-{namespace bk2k = BK2K\BootstrapPackage\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:switch expression="{data.section_frame}">
-    <f:case value="1"><bk2k:var name="sectionClass" value="invisible" /></f:case>
-    <f:case value="5"><bk2k:var name="sectionClass" value="rulerbefore" /></f:case>
-    <f:case value="6"><bk2k:var name="sectionClass" value="rulerafter" /></f:case>
-    <f:case value="10"><bk2k:var name="sectionClass" value="indent" /></f:case>
-    <f:case value="11"><bk2k:var name="sectionClass" value="indent-left" /></f:case>
-    <f:case value="12"><bk2k:var name="sectionClass" value="indent-right" /></f:case>
-    <f:case value="20"><bk2k:var name="sectionClass" value="well" /></f:case>
-    <f:case value="21"><bk2k:var name="sectionClass" value="jumbotron" /></f:case>
-    <f:case value="31"><bk2k:var name="sectionClass" value="sans-marge" /></f:case>
-    <f:case default="TRUE"><bk2k:var name="sectionClass" value="default" /></f:case>
+    <f:case value="1"><f:variable name="sectionClass" value="invisible" /></f:case>
+    <f:case value="5"><f:variable name="sectionClass" value="rulerbefore" /></f:case>
+    <f:case value="6"><f:variable name="sectionClass" value="rulerafter" /></f:case>
+    <f:case value="10"><f:variable name="sectionClass" value="indent" /></f:case>
+    <f:case value="11"><f:variable name="sectionClass" value="indent-left" /></f:case>
+    <f:case value="12"><f:variable name="sectionClass" value="indent-right" /></f:case>
+    <f:case value="20"><f:variable name="sectionClass" value="well" /></f:case>
+    <f:case value="21"><f:variable name="sectionClass" value="jumbotron" /></f:case>
+    <f:case value="31"><f:variable name="sectionClass" value="sans-marge" /></f:case>
+    <f:case default="TRUE"><f:variable name="sectionClass" value="default" /></f:case>
 </f:switch>
 
 <div id="c{data.uid}" class="frame {sectionClass}">

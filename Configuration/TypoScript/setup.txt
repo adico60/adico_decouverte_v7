@@ -89,7 +89,7 @@ page {
 		### DATA PREPROCESSING ###
 		##########################
 		dataProcessing {
-			50 = BK2K\BootstrapPackage\DataProcessing\MenuProcessor
+			50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 			50 {
 				special = directory
 				special.value = {$page.footer.navdir}
